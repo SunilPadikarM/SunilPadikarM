@@ -1,0 +1,102 @@
+﻿@model HotelReservation.Models.Room
+
+@{
+    ViewBag.Title = "CreditCardInformation";
+}
+
+<h2>Add Card Details</h2>
+
+<div class="row left table-bordered">
+    <div class="col-lg-8">
+        <form id="searchForm" method="get">
+            <div class="row">
+                <div class="col-lg-4">
+                    <label>Card Type</label>
+                </div>
+                <div class="col-lg-4">
+                    <input type="radio" name="cardType" value="Visa" /> Visa<br />
+                    <input type="radio" name="cardType" value="American Express" /> American Express<br />
+                    <input type="radio" name="cardType" value="MasterCard" /> Master Card<br />
+                </div>
+            </div>
+            <br />
+            <div class="row">
+                <div class="form-group">
+                    <div class="col-lg-4">
+                        <label>Name On Credit Card</label>
+                    </div>
+                    <div class="col-lg-3">
+                        <input type="text" name="nameOnCard" />
+                    </div>
+                </div>
+            </div>
+            <br />
+            <div class="row">
+                <div class="form-group">
+                    <div class="col-lg-4">
+                        <label>Credit Card Number</label>
+                    </div>
+                    <div class="col-lg-3">
+                        <input type="number" name="cardNumber" />
+                    </div>
+                </div>
+            </div>
+            <br />
+            <div class="row">
+                <div class="form-group">
+                    <div class="col-lg-4">
+                        <label>Expiration Date</label>
+                    </div>
+                    <div class="col-lg-3">
+                        <input type="text" name="date" />
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group">
+                    <div class="col-lg-4">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-lg-3">
+                        <input type="submit" value="PayAndBook" />
+                        <a href="">Add new Card</a>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <br />
+    <br />
+    <br />
+    <div class="col-lg-4">
+        <table class="table table-dark" border="1">
+            <thead>
+                <tr>
+                    <td colspan="1">
+                        <label>Selected Room</label>
+                    </td>
+                    <td colspan="1"></td>
+                </tr>
+            </thead>
+            <tr>
+                <td>Room Number</td>
+                <td>@Html.DisplayFor(modelItem => Model.RoomNumber)</td>
+            </tr>
+            <tr>
+                <td>Room Type</td>
+                <td>@Html.DisplayFor(modelItem => Model.RoomType)</td>
+            </tr>
+            <tr>
+                <td><label>Total Price</label></td>
+                <td>@Html.DisplayFor(modelItem => Model.Price)</td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+

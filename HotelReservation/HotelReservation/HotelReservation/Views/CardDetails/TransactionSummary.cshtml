@@ -1,0 +1,55 @@
+﻿@model HotelReservation.Models.TransactionSummary
+@{
+    ViewBag.Title = "Transaction Summary";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Transaction Summary</h2>
+<body background="http://sipsavorlodi.com/wp-content/uploads/2018/09/31-white-background-hd-high-resolution-desktop-wallpaper-download-plain-background-hd-images-home-wallpaper.jpg">
+    <style>
+        body {
+            text-align: center;
+            background-repeat: no-repeat;
+            background-size: cover
+        }
+    </style>
+    <p class="text-info">Payment Successful!</p>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#TransactionSuccess').DataTable();
+        });
+    </script>
+    <table id="TransactionSuccess" class="table table-striped table-bordered">
+        <thead>
+            <tr>
+                <td>Transaction Number</td>
+                <td>@Model.TransactionID</td>
+            </tr>
+            <tr>
+                <td>Card Number</td>
+                <td>@Model.CardNumber</td>
+            </tr>
+            <tr>
+                <td>Name On Card</td>
+                <td>@Model.NameOnCard</td>
+            </tr>
+            <tr>
+                <td>Quantity</td>
+                <td>@Model.qty</td>
+            </tr>
+            <tr>
+                <td>Unit Price</td>
+                <td>@Model.Price</td>
+            </tr>
+            <tr>
+                <td>
+                    Total Price
+                </td>
+                <td>@Model.TotalPrice</td>
+            </tr>
+        </thead>
+    </table>
+    </body>
+    <div>
+        @Html.ActionLink("Home", "../")
+    </div>

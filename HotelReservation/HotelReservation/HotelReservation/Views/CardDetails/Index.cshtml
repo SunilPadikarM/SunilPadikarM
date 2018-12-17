@@ -1,0 +1,53 @@
+﻿@model IEnumerable<HotelReservation.Models.CardDetail>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('#CardDetails').DataTable();
+} );
+</script>
+<table id="CardDetails" class="table table-striped table-bordered">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CardNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CardType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NameOnCard)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ExpDate)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.CardNumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CardType)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NameOnCard)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ExpDate)
+        </td>
+        <td>
+            @Html.ActionLink("Delete", "Delete", new { id = item.CardNumber }) |
+            @Html.ActionLink("Make Payment", "MakePayment", new { CardNumber = item.CardNumber, CardType = item.CardType, NameOnCard = item.NameOnCard, ExpDate = item.ExpDate, ID = Session["UserId"] })
+        </td>
+    </tr>
+    }
+</table>
+@Html.ActionLink("Add New", "Create") 

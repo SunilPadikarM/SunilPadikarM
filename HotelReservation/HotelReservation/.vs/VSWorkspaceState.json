@@ -1,0 +1,13 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\HotelReservation",
+    "\\HotelReservation\\Controllers",
+    "\\HotelReservation\\Views",
+    "\\HotelReservation\\Views\\CustomerAccount",
+    "\\HotelReservation\\Views\\Reservations",
+    "\\HotelReservation\\Views\\Rooms"
+  ],
+  "SelectedNode": "\\HotelReservation\\Controllers",
+  "PreviewInSolutionExplorer": false
+}
